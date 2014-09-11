@@ -1,6 +1,6 @@
 accupass-log
 ============
-# Used to log user error message
+Used to log user error message
 
 there are 3 models
 
