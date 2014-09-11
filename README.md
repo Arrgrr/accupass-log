@@ -7,8 +7,11 @@ there are 3 models
 ## Log
 
 user: FK
+
 category: FK
+
 message: log message, custom field
+
 log_date: timestamp
 
 ## Category
