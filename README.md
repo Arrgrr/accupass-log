@@ -6,17 +6,17 @@ there are 3 models
 
 ## Log
 
-### user
-### category
-### message
-### log_date
+user: FK
+category: FK
+message: log message, custom field
+log_date: timestamp
 
 ## Category
 
-### title
+title: define time
 
 ## User
 
-### name
-### email
-### userid
+name: user name
+email: user email
+userid: user id
