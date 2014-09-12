@@ -23,3 +23,24 @@ title: define time
 name: user name
 email: user email
 userid: user id
+
+# EC2 setting
+
+###/etc/apache2/sites-enabled/
+
+WSGIScriptAlias / /home/ubuntu/log.accupass.com/accupass-log/accupasslog/wsgi.py
+WSGIPythonPath /home/ubuntu/log.accupass.com/accupass-log
+<Directory /home/ubuntu/log.accupass.com/accupass-log/accupasslog>
+    <Files wsgi.py>
+        Order deny,allow
+        Require all granted
+    </Files>
+</Directory>
+
+<Directory /home/ubuntu/log.accupass.com/accupass-log/static>
+    Require all granted
+</Directory>
+
+<Directory /home/ubuntu/log.accupass.com/accupass-log/media>
+    Require all granted
+</Directory>
