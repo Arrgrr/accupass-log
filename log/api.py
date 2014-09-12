@@ -6,7 +6,6 @@ from django.utils import timezone
 import json
 from django.views.decorators.csrf import csrf_exempt
 
-logs = Log.objects.all()
 
 def timeToString(datetime):
 	return datetime.strftime("%Y-%m-%d %H:%M")
@@ -15,12 +14,13 @@ def userToJson(user):
 	return json.dumps({'name': user.name, 'email': user.email, 'userid': user.userid})
 
 def home(request):
+	logs = Log.objects.all()
 	data = json.dumps([{'message': log.message, 
 		'log_date': timeToString(log.log_date),
 		'user': userToJson(log.user),
 		'category': log.error_type.title
 		} for log in logs])
-	return HttpResponse(data)
+	return HttpResponse(data, content_type='application/json')
 
 @csrf_exempt 
 def createLog(request):
