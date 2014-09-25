@@ -38,3 +38,10 @@ def createLog(request):
 		log = Log.objects.create(user=user, error_type=error_type, message=data['message'], log_date=timezone.now())
 		print log
 	return HttpResponse('success')
+
+def categories(request):
+	categories = Category.objects.all()
+	print categories
+	data = json.dumps([{'title': category.title} for category in categories])
+
+	return HttpResponse(data, content_type='application/json')
