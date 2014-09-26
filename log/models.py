@@ -5,6 +5,7 @@ class Log(models.Model):
 	error_type = models.ForeignKey(u'Category', blank=True, null=True)
 	message = models.CharField(u'Message', max_length=200)
 	log_date = models.DateTimeField('date published')
+	platform = models.CharField(u'Platform', max_length=20)
 
 	def __unicode__(self):
 		return self.message
