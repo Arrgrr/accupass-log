@@ -15,7 +15,8 @@ def userToJson(user):
 
 def home(request):
 	logs = Log.objects.all()
-	data = json.dumps([{'message': log.message, 
+	data = json.dumps([{'message': log.message,
+		'pltform': log.platform, 
 		'log_date': timeToString(log.log_date),
 		'user': userToJson(log.user),
 		'category': log.error_type.title
@@ -35,7 +36,7 @@ def createLog(request):
 
 		error_type = Category.objects.get(pk=data['error_type'])
 
-		log = Log.objects.create(user=user, error_type=error_type, message=data['message'], log_date=timezone.now())
+		log = Log.objects.create(user=user, error_type=error_type, message=data['message'], platform=data['platform'], log_date=timezone.now())
 		print log
 	return HttpResponse('success')
 
