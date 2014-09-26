@@ -43,6 +43,6 @@ def createLog(request):
 def categories(request):
 	categories = Category.objects.all()
 	print categories
-	data = json.dumps([{'title': category.title} for category in categories])
+	data = json.dumps([{'title': category.title, 'id': categories.index(category)} for category in categories])
 
 	return HttpResponse(data, content_type='application/json')
