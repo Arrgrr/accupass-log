@@ -1,0 +1,17 @@
+<html>
+
+<table>
+    {% for log in logs %}
+        <tr>
+        <td>{{ log.message }}</td>
+        <td>{{ log.user.name }}</td>
+        <td>{{ log.user.email }}</td>
+        <td>{{ log.user.userid }}</td>
+        <td>{{ log.error_type }}</td>
+        <td>{{ log.platform }}</td>
+        <td>{{ log.log_date }}</td>
+    	</tr>
+    {% endfor %}
+</table>
+
+</html>
