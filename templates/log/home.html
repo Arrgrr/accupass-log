@@ -1,17 +1,121 @@
+<!doctype html>
 <html>
 
-<table>
-    {% for log in logs %}
-        <tr>
-        <td>{{ log.message }}</td>
-        <td>{{ log.user.name }}</td>
-        <td>{{ log.user.email }}</td>
-        <td>{{ log.user.userid }}</td>
-        <td>{{ log.error_type }}</td>
-        <td>{{ log.platform }}</td>
-        <td>{{ log.log_date }}</td>
-    	</tr>
-    {% endfor %}
-</table>
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <style>
+        body{
+            background: #e8e8e8;
+            width:900px;
+            margin: 0 auto;
+            font-family:monospace;
+        }
+
+        .con{
+            width:900px;
+            margin: 200px auto;
+        }
+
+        .mtable{
+            border:  0;
+            border-radius: 5px;
+            border-collapse: collapse;
+            background: white;
+            width:900px;
+            box-shadow: 0px 1px 3px rgba(0,0,0,0.3);
+            font-size:10px;
+        }
+
+        .mtable td{
+            border-right: 1px solid #d2d2d2;
+            min-width: 100px;
+            height: 30px;
+            padding: 5px
+        }
+
+        .mtable td:last-child{
+            border-right: 0px;
+        }
+
+        .mtable tr{
+            border-bottom: 1px solid #d2d2d2;
+        }
+
+        .mtable tr:last-child{
+            border-bottom: 0;
+        }
+        .mtable thead{
+            background: #7bb6e4;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .mtable thead td{
+            border-right: 1px solid #6ba1cb;
+            text-align: center;
+        }
+
+        .mtable thead td:first-child{
+            border-radius: 5px 0 0 0;
+        }
+        .mtable thead td:last-child{
+            border-radius: 0 5px 0 0;
+        }
+        h1{
+            text-align: center;
+            color: #333;
+        }
+
+        .tr_bg{
+            background: black;
+        }
+
+    </style>
+
+    <script>
+
+        $( ".mtable tr:nth-child(even)" ).addClass( "tr_bg" );
+
+
+    </script>
+
+</head>
+
+<body>
+    <div class="con">
+        <h1>標題這裡</h1>
+        <table class="mtable">
+            <thead>
+               <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                </tr>
+            </thead>
+
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+
+
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+
+        </table>
+    </div>
+
+</body>
 
 </html>
